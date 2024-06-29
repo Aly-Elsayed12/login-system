@@ -34,7 +34,7 @@ loginBtn.addEventListener('click' , function(){
   }else{
     console.log("try again");
     alertLogin.classList.remove("d-none")
-    alertLogin.className.add("d-block")
+    alertLogin.classList.add("d-block")
   }
   }
 })
