@@ -129,16 +129,20 @@ function validPas(){
 }
 
 function emailExit(){
-  for(var i=0; i < users.length; i++){
-    if(emailInput.value == users[i].email){
-      alertExitEmail.classList.remove("d-none")
-      alertExitEmail.classList.add("d-block")
-      return true
-    }else{
-      alertExitEmail.classList.add("d-none")
-      alertExitEmail.classList.remove("d-block")
-      return false
+  if(localStorage.getItem('users') != null){
+    for(var i=0; i < users.length; i++){
+      if(emailInput.value == users[i].email){
+        alertExitEmail.classList.remove("d-none")
+        alertExitEmail.classList.add("d-block")
+        return true
+      }else{
+        alertExitEmail.classList.add("d-none")
+        alertExitEmail.classList.remove("d-block")
+        return false
+      }
     }
+  }else{
+    return false
   }
 }
 
